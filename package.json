@@ -1,0 +1,26 @@
+{
+  "name": "react-learning",
+  "version": "1.0.0",
+  "description": "Learning React in Detail",
+  "scripts": {
+    "start": "npx parcel index.html",
+    "build": "npx parcel build index.html",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Mohit R Chugh",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.1"
+  },
+  "browserslist": [
+    "last 2 version"
+  ]
+}
