@@ -1,30 +1,25 @@
-/** Optimizing our App **/
+/** Lets build our store **/
+E12 P1 - TOPICS
 
-E9 P1 - TOPICS
-How we can optomise our code in a better way
-Custom Hooks
-Single Responsibility Principle
-Code Modularity
+- Intorduction
+- How we can manage state using REDUX
+- How we can manage data using REDUX
+- REDUX works in the data layer
 
-## Single Responsibility Principle
+---
 
-> Supose we have a class, function or any single identity it much have a single responsibility
-> Each component is a different function where each of the this component has a single responsibility
-> Ex: RestoCard needs to just display the card, Header needs to just display the header on the page
-> If we are doing multiple things in a component, it needs to be broken down into a single component
+## Introduction
 
-## Code Modularity
+"REDUX is not madatory"
+Do we actually need REDUX, IT must be thought out process to use REDUX
+Only when data is heavily used we make use of REDUX (Read and write operations/lot of components where data is being transfered)
 
-> Maintaining the code modularity (breaking the code into smaller components) - Maintainable/testable/Reusability
+REDUX and REACT are different Libraries
+REDUX is a sepearate library which we install in our application
+REDUX is not the only library - other library - ZUSTAND
 
-## Custom Hooks
+## Advantage
 
-> Different Hooks we have used: useState, useEffect, useParam, useRouteError
-
-1. How we can use custom hooks
-2. how we can use this custom hooks to make our code modular
-3. Abstract the responsibilty of these components to a different hook
-
-## IMP - We will abstract(take out) some responsibility from a component extract it inside a hook so that our hook and component are modular
-
-HOOKs are like Utility function (normal function)
+> Handling state of our application
+> Applications become easier to debug
+> There is a chrome extension for Redux

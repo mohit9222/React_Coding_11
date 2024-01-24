@@ -1,7 +1,13 @@
 const Footer = () => {
   return (
-    <div className="footer">
-      <h5>@Copyright</h5>
+    <div>
+      <div className="shadow-lg mt-2 text-center">
+        <div className="min-h-screen">
+          <div className="sticky top-[100vh] bg-white shadow-md border-black">
+            Footer
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

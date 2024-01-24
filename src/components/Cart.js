@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Grocery from "./Grocery";
 import { people } from "../utils/constants";
 
-const Contact = () => {
+const Cart = () => {
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
@@ -44,4 +44,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Cart;

@@ -1,48 +1,70 @@
-import { LOGO_URL } from "../utils/constants";
-import { useState, useEffect } from "react";
+import LOGO from "../../assets/images/Food.png";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { cart, grocery, contact, about, user, search } from "../utils/Icon";
+import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
-  const [btnNameReact, setBtnNameReact] = useState("Login");
+  const [btnNameReact, setBtnNameReact] = useState("Sign In");
   //let btnName = "Login";
   //console.log("Header rendered");
   const onlineStatus = useOnlineStatus();
-  console.log(onlineStatus);
+  const data = useContext(UserContext);
+  const { loggedInUser } = data;
+  const carts = useSelector((store) => store.cart.items);
+  console.log(carts);
   useEffect(() => {
     //console.log("useEffect is called");
   }, [btnNameReact]);
 
   return (
-    <div className="header">
-      <div className="logo-container">
-        <img className="logo" src={LOGO_URL} />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Online status: {onlineStatus ? "🟢" : "🔴"}</li>
-          <li>
-            <Link to="/">Home</Link>
+    <div className="flex justify-between bg-white shadow-md mb-2">
+      {/* <div className="w-28"> */}
+      <Link to="/" className="flex ">
+        <img className="ml-2.5 w-[82px] py-1" src={LOGO} />
+      </Link>
+      {/* </div> */}
+      <div className="flex items-center font-sans">
+        <ul className="flex p-4 m-2">
+          <li className="px-4 hover:text-orange-600">
+            <Link to="/search" className="flex ">
+              {search} Search
+            </Link>
           </li>
-          <li>
-            <Link to="/about">About</Link>
+          <li className="px-4 hover:text-orange-600">
+            <Link to="/about" className="flex ">
+              {about} About
+            </Link>
           </li>
-          <li>
-            <Link to="/contact">Contact</Link>
+          <li className="px-4 hover:text-orange-600">
+            <Link to="/contact" className="flex">
+              {contact} Contact
+            </Link>
           </li>
-          <li>
-            <Link to="/grocery">Grocery</Link>
+          <li className="px-4 hover:text-orange-600">
+            <Link to="/grocery" className="flex">
+              {grocery} InstaFast
+            </Link>
           </li>
-          <li>Cart</li>
+          <li className="px-4 flex font-bold text-md hover:text-orange-600">
+            <Link to="/cart" className="flex">
+              {cart} Cart ({carts.length} items)
+            </Link>
+          </li>
           <button
-            className="login"
+            className="px-4 flex hover:text-orange-600 font-bold"
             onClick={() => {
-              btnNameReact === "Login"
-                ? setBtnNameReact("Logout")
-                : setBtnNameReact("Login");
+              btnNameReact === "Sign In"
+                ? setBtnNameReact("Sign Out")
+                : setBtnNameReact("Sign In");
             }}
           >
-            {btnNameReact}
+            {/* {console.log(loggedInUser)} */}
+            {user}
+            {/* {console.log(btnNameReact === "Sign Out")} */}
+            {btnNameReact === "Sign Out" ? loggedInUser : btnNameReact}
           </button>
         </ul>
       </div>
